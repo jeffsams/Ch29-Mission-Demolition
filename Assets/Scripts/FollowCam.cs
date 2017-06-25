@@ -24,10 +24,32 @@ public class FollowCam : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
+        Vector3 destination;
+        if (poi == null)
+        {
+            destination = Vector3.zero;
+        } else
+        {
+            destination = poi.transform.position;
+            if (poi.tag == "Projectile")
+            {
+                if (poi.GetComponent<Rigidbody>().IsSleeping() )
+                {
+                    poi = null;
+                    return;
+                }
+            }
+        }
         // if there's only one line following an if, it doesnt need braces
+       
+        // Get the position of the poi
+
+	}
+
+    void Update()
+    {
         if (poi == null) return; // return if there is no poi
 
-        // Get the position of the poi
         Vector3 destination = poi.transform.position;
         destination.x = Mathf.Max(minXY.x, destination.x);
         destination.y = Mathf.Max(minXY.y, destination.y);
@@ -37,5 +59,5 @@ public class FollowCam : MonoBehaviour {
         //Set the camera to the destination
         transform.position = destination;
         this.GetComponent<Camera>().orthographicSize = destination.y + 10;
-	}
+    }
 }
