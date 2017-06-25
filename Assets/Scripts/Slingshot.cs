@@ -11,9 +11,12 @@ public class Slingshot : MonoBehaviour {
     public GameObject projectile;
     public bool aimingMode;
     public float velocityMult = 4f;
+    static public Slingshot S;
 
     void Awake()
     {
+        S = this;
+
         Transform launchPointTrans = transform.Find("LaunchPoint");
         launchPoint = launchPointTrans.gameObject;
         launchPoint.SetActive(false);
