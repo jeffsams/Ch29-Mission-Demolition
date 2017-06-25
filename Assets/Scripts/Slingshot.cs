@@ -49,8 +49,10 @@ public class Slingshot : MonoBehaviour {
         if (Input.GetMouseButtonUp(0))
         {
             aimingMode = false;
+            // Used peer's code to help me with .GetComponent<RIgidBody>
             projectile.GetComponent<Rigidbody>().isKinematic = false;
             projectile.GetComponent<Rigidbody>().velocity = -mouseDelta * velocityMult;
+            FollowCam.S.poi = projectile;
             projectile = null;
         }
     }
