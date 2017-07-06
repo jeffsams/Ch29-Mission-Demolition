@@ -36,7 +36,7 @@ public class MissionDemolition : MonoBehaviour {
 
     void StartLevel()
     {
-        if (castle!= null)
+        if (castle != null)
         {
             Destroy(castle);
         }
