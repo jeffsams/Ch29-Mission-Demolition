@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 m_EditorVersion: 5.5.0f3
+=======
+m_EditorVersion: 5.6.1f1
+>>>>>>> 5d40993f2cedf7c4951aa276d70e5b044ed9fc4b
